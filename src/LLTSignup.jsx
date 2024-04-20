@@ -12,6 +12,7 @@ const SignupPage = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const [error, setError] = useState('');
+    const toMails = [email];
 
     const togglePasswordVisibility = () => {
       setShowPassword(!showPassword); 
@@ -23,12 +24,13 @@ const SignupPage = () => {
   
     const handleSignup = async () => {
       try {
-        const response = await axios.post('your_api_endpoint/signup', {
-          firstName,
-          lastName,
-          email,
-          password,
-          confirmPassword,
+        const response = await axios.post('https://lltapp.net/api/v1/reset-password/request-email-verification', {
+          // firstName,
+          // lastName,
+          // email,
+          // password,
+          // confirmPassword,
+          toMails,
         });
         console.log(response.data); // Assuming API returns user data
       } catch (error) {
