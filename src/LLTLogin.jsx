@@ -32,7 +32,6 @@ const LltLogin = () => {
     setShowPassword(!showPassword); 
   };
 
-
   const handleRememberMeChange = () => {
     setRememberMe(!rememberMe);
   };
@@ -46,8 +45,6 @@ const LltLogin = () => {
       console.log(response.data); 
     } catch (error) {
 
-
-      
       setError(error.response.data.message);
     }
   };
